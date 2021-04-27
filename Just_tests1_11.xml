@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<project xmlns:html="http://www.w3.org/1999/xhtml">
+  <fileHeader companyName="" creationDateTime="2021-04-23T10:44:36.3809595" productName="CODESYS" productVersion="CODESYS V3.5 SP16 Patch 4" />
+  <contentHeader modificationDateTime="2021-04-23T10:43:53.8206191" name="SimpleCfUnitExample.project">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/projectinformation">
+        <ProjectInformation>
+          <property name="Project" type="string">SimpleCfUnitExample</property>
+        </ProjectInformation>
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="FB_Sum_Test" pouType="functionBlock">
+        <interface>
+          <addData>
+            <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/pouinheritance">
+              <Inheritance>
+                <Extends>CfUnit.FB_TestSuite</Extends>
+              </Inheritance>
+            </data>
+            <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/attributes">
+              <Attributes>
+                <Attribute Name="call_after_init" Value="" />
+              </Attributes>
+            </data>
+          </addData>
+        </interface>
+        <body>
+          <ST>
+            <html:xhtml>NEW_Test1(); NEW_Test2(); NEW_Test3();</html:xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="071ba4c3-fe0d-4b0b-be72-a320c9d403a4" name="TwoPlusTwoEqualsFour">
+              <interface>
+                <localVars>
+                  <variable name="Sum">
+                    <type>
+                      <derived name="FB_Sum" />
+                    </type>
+                  </variable>
+                  <variable name="Result">
+                    <type>
+                      <UINT />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedSum">
+                    <type>
+                      <UINT />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="4" />
+                    </initialValue>
+                  </variable>
+                </localVars>
+                <addData>
+                  <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/accessmodifiers">
+                    <AccessModifiers Private="true" />
+                  </data>
+                </addData>
+              </interface>
+              <body>
+                <ST>
+                  <html:xhtml>TEST('TwoPlusTwoEqualsFour');
+
+Sum(one := 2, two := 2, result =&gt; Result);
+
+AssertEquals(Expected := ExpectedSum,
+             Actual := Result,
+             Message := 'The calculation is not correct');
+
+TEST_FINISHED();</html:xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data>
+          <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
+            <ObjectId>69b661ca-5faa-43bb-8b8a-2cae13b2cfe4</ObjectId>
+          </data>
+        <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+                      <Method ObjectId="071ba4c3-fe0d-4b0b-be72-a320c9d403a4" name="NEW_Test1">
+                       <interface>
+                          <localVars>
+                          <variable name="Sum">
+                            <type>
+                              <derived name="FB_Sum" />
+                            </type>
+                          </variable>
+                          <variable name="Result">
+                            <type>
+                              <UINT />
+                            </type>
+                          </variable>
+                          <variable name="ExpectedSum">
+                            <type>
+                              <UINT />
+                            </type>
+                            <initialValue>
+                              <simpleValue value="0" /> 
+                            </initialValue>
+                            </variable>
+                        </localVars>
+                        <addData>
+                          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/accessmodifiers">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <html:xhtml>
+                           TEST('NEW_Test1');
+                         Sum(one := 3, two := 1, result =&gt; Result);
+                          AssertEquals(Expected := ExpectedSum,
+                                     Actual := Result,
+                                     Message := 'The calculation is not correct');
+                      TEST_FINISHED();
+                          </html:xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+                      <Method ObjectId="071ba4c3-fe0d-4b0b-be72-a320c9d403a4" name="NEW_Test2">
+                       <interface>
+                          <localVars>
+                          <variable name="Sum">
+                            <type>
+                              <derived name="FB_Sum" />
+                            </type>
+                          </variable>
+                          <variable name="Result">
+                            <type>
+                              <UINT />
+                            </type>
+                          </variable>
+                          <variable name="ExpectedSum">
+                            <type>
+                              <UINT />
+                            </type>
+                            <initialValue>
+                              <simpleValue value="0" /> 
+                            </initialValue>
+                            </variable>
+                        </localVars>
+                        <addData>
+                          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/accessmodifiers">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <html:xhtml>
+                           TEST('NEW_Test2');
+                         Sum(one := 3, two := 3, result =&gt; Result);
+                          AssertEquals(Expected := ExpectedSum,
+                                     Actual := Result,
+                                     Message := 'The calculation is not correct');
+                      TEST_FINISHED();
+                          </html:xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+                      <Method ObjectId="071ba4c3-fe0d-4b0b-be72-a320c9d403a4" name="NEW_Test3">
+                       <interface>
+                          <localVars>
+                          <variable name="Sum">
+                            <type>
+                              <derived name="FB_Sum" />
+                            </type>
+                          </variable>
+                          <variable name="Result">
+                            <type>
+                              <UINT />
+                            </type>
+                          </variable>
+                          <variable name="ExpectedSum">
+                            <type>
+                              <UINT />
+                            </type>
+                            <initialValue>
+                              <simpleValue value="0" /> 
+                            </initialValue>
+                            </variable>
+                        </localVars>
+                        <addData>
+                          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/accessmodifiers">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <html:xhtml>
+                           TEST('NEW_Test3');
+                         Sum(one := 3, two := 3, result =&gt; Result);
+                          AssertEquals(Expected := ExpectedSum,
+                                     Actual := Result,
+                                     Message := 'The calculation is not correct');
+                      TEST_FINISHED();
+                          </html:xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+                      <Method ObjectId="071ba4c3-fe0d-4b0b-be72-a320c9d403a4" name="NEW_Test1">
+                       <interface>
+                          <localVars>
+                          <variable name="Sum">
+                            <type>
+                              <derived name="FB_Sum" />
+                            </type>
+                          </variable>
+                          <variable name="Result">
+                            <type>
+                              <UINT />
+                            </type>
+                          </variable>
+                          <variable name="ExpectedSum">
+                            <type>
+                              <UINT />
+                            </type>
+                            <initialValue>
+                              <simpleValue value="0" /> 
+                            </initialValue>
+                            </variable>
+                        </localVars>
+                        <addData>
+                          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/accessmodifiers">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <html:xhtml>
+                           TEST('NEW_Test1');
+                         Sum(one := 3, two := 1, result =&gt; Result);
+                          AssertEquals(Expected := ExpectedSum,
+                                     Actual := Result,
+                                     Message := 'The calculation is not correct');
+                      TEST_FINISHED();
+                          </html:xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+                      <Method ObjectId="071ba4c3-fe0d-4b0b-be72-a320c9d403a4" name="NEW_Test2">
+                       <interface>
+                          <localVars>
+                          <variable name="Sum">
+                            <type>
+                              <derived name="FB_Sum" />
+                            </type>
+                          </variable>
+                          <variable name="Result">
+                            <type>
+                              <UINT />
+                            </type>
+                          </variable>
+                          <variable name="ExpectedSum">
+                            <type>
+                              <UINT />
+                            </type>
+                            <initialValue>
+                              <simpleValue value="0" /> 
+                            </initialValue>
+                            </variable>
+                        </localVars>
+                        <addData>
+                          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/accessmodifiers">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <html:xhtml>
+                           TEST('NEW_Test2');
+                         Sum(one := 3, two := 3, result =&gt; Result);
+                          AssertEquals(Expected := ExpectedSum,
+                                     Actual := Result,
+                                     Message := 'The calculation is not correct');
+                      TEST_FINISHED();
+                          </html:xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+                      <Method ObjectId="071ba4c3-fe0d-4b0b-be72-a320c9d403a4" name="NEW_Test3">
+                       <interface>
+                          <localVars>
+                          <variable name="Sum">
+                            <type>
+                              <derived name="FB_Sum" />
+                            </type>
+                          </variable>
+                          <variable name="Result">
+                            <type>
+                              <UINT />
+                            </type>
+                          </variable>
+                          <variable name="ExpectedSum">
+                            <type>
+                              <UINT />
+                            </type>
+                            <initialValue>
+                              <simpleValue value="0" /> 
+                            </initialValue>
+                            </variable>
+                        </localVars>
+                        <addData>
+                          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/accessmodifiers">
+                            <AccessModifiers Private="true" />
+                          </data>
+                        </addData>
+                      </interface>
+                      <body>
+                        <ST>
+                          <html:xhtml>
+                           TEST('NEW_Test3');
+                         Sum(one := 3, two := 3, result =&gt; Result);
+                          AssertEquals(Expected := ExpectedSum,
+                                     Actual := Result,
+                                     Message := 'The calculation is not correct');
+                      TEST_FINISHED();
+                          </html:xhtml>
+                        </ST>
+                      </body>
+                      <addData />
+                    </Method>
+                </data></addData>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/projectstructure">
+      <ProjectStructure>
+        <Folder Name="Test">
+          <Object Name="FB_Sum_Test" ObjectId="69b661ca-5faa-43bb-8b8a-2cae13b2cfe4">
+            <Object Name="TwoPlusTwoEqualsFour" ObjectId="071ba4c3-fe0d-4b0b-be72-a320c9d403a4" />
+          </Object>
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
