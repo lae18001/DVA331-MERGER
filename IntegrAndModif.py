@@ -17,60 +17,77 @@ expectedOut = '0'
 
 ### goes through every row in csv file, extracts the input values and creates new test cases
 for row in csv_f:
-    ### generates the name for every new test case with individual numbering that is equal to the row number where inputs have been taken from
+    ### generates the name for every new test case with individual numbering that is equal to the row number
     i=i+1
-    m_name = "NEW_Test" + str(i)
-    #print(m_name)
+    m_name = "FB_CraneNumberSuperv_Test" + str(i)
 
-    ###...TODO...add the test case name (m_name) to FB body-ST part as well, so that it gets called and executed
+    text_data = """<data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name='"""+m_name+"""' ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581">
+              <interface>
+                <inputVars>
+                  <variable name="craneNoSet1">
+                    <type>
+                      <WORD />
+                    </type>
+                    <initialValue>
+                      <simpleValue value='"""+row[0]+"""'/>
+                    </initialValue>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> First crane number </xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="craneNoSet2">
+                    <type>
+                      <WORD />
+                    </type>
+                    <initialValue>
+                      <simpleValue value='"""+row[1]+"""'/>
+                    </initialValue>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Second crane number </xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="ccsSafeCraneNumberSuperv" />
+                    </type>
+                  </variable>
+                  <variable name="Result">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">TEST('"""+m_name+"""');      			      (* Naming the test case *)
 
-    ### separate variable that integrates the input values and then gets added into text_data
-    case_to_add = """ TEST('"""+m_name+"""');
-                         Sum(one := """+row[0]+""", two := """+row[1]+""", result =&gt; Result);
-                          AssertEquals(Expected := ExpectedSum,
-                                     Actual := Result,
-                                     Message := 'The calculation is not correct');
-                      TEST_FINISHED();"""
-
-    text_data = """<data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
-                      <Method name='"""+m_name+"""' ObjectId="071ba4c3-fe0d-4b0b-be72-a320c9d403a4">
-                       <interface>
-                          <localVars>
-                          <variable name="Sum">
-                            <type>
-                              <derived name="FB_Sum" />
-                            </type>
-                          </variable>
-                          <variable name="Result">
-                            <type>
-                              <UINT />
-                            </type>
-                          </variable>
-                          <variable name="ExpectedSum">
-                            <type>
-                              <UINT />
-                            </type>
-                            <initialValue>
-                              <simpleValue value='"""+expectedOut+"""' /> 
-                            </initialValue>
-                            </variable>
-                        </localVars>
-                        <addData>
-                          <data name="http://www.3s-software.com/plcopenxml/accessmodifiers" handleUnknown="implementation">
-                            <AccessModifiers Private="true" />
-                          </data>
-                        </addData>
-                      </interface>
-                      <body>
-                        <ST>
-                          <xhtml xmlns="http://www.w3.org/1999/xhtml">
-                          """+case_to_add+"""
-                          </xhtml>
-                        </ST>
-                      </body>
-                      <addData />
-                    </Method>
-                </data>"""
+Fun(in_CraneNoSet1 := craneNoSet1, in_CraneNoSet2 := craneNoSet2, out_S_CraneNoSupervOk =&gt; Result);    (* Calling the FB to be tested *)
+AssertTrue(Condition := (Result = ExpectedResult),
+           Message := 'Result is True');
+                                                                                      
+TEST_FINISHED();</xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data>"""
                   
     method_names.append(m_name+'();')
     inputCases.append(etree.fromstring(text_data)) #new test cases are added in the list parsed as tree Elements
@@ -79,7 +96,8 @@ f.close()
 
 ###--------- Modification and Update of an XML file -----------###
 
-file_n = "Just_tests2.xml"
+### Specify the file name where new test cases will be addded
+file_n = "just_t1.xml"
 elem = etree.parse(file_n) 
 
 ### Removes namespaces from the parsed xml file
@@ -95,18 +113,19 @@ remove_namespace(elem, u"http://www.plcopen.org/xml/tc6_0200")
 root = elem.getroot()
 #print(root.tag)
 
-### Adds all the newly created test-case method names into FB body
+### Adds all newly created (test case) method names into FB body
 fb_body = root.find('./types/pous/pou/body/ST/')
 names = ' '.join(method_names)
 fb_body.text = names   
 print(fb_body.text)
 
-### Finds a place where test cases as new methods will be added
+### Finds a place where new test cases will be added
+### clears the existing space and adds in new cases
 place_for_case = elem.findall('./types/pous/pou/addData')
+place_for_case[0].clear()
 place_for_case[0].extend(inputCases)
 
-#place_for_case.remove()
-
-
-### Writes changes to a new XML file
-elem.write("New_Just_Tests2.xml", encoding="us-ascii", xml_declaration = True)
+### Changes are written to a new XML file, name needs to be specifyed
+new_file_name = "just_t1_new1.xml"
+elem.write(new_file_name, encoding="us-ascii", xml_declaration = True)
+print('The new file was created!:', new_file_name)
