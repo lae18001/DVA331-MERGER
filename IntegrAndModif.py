@@ -79,7 +79,7 @@ f.close()
 
 ###--------- Modification and Update of an XML file -----------###
 
-file_n = "Just_tests1_11.xml"
+file_n = "Just_tests2.xml"
 elem = etree.parse(file_n) 
 
 ### Removes namespaces from the parsed xml file
@@ -105,5 +105,8 @@ print(fb_body.text)
 place_for_case = elem.findall('./types/pous/pou/addData')
 place_for_case[0].extend(inputCases)
 
-### Writes back changes to PLCopen XML file 
-elem.write(file_n, encoding="us-ascii", xml_declaration = True)
+#place_for_case.remove()
+
+
+### Writes changes to a new XML file
+elem.write("New_Just_Tests2.xml", encoding="us-ascii", xml_declaration = True)
