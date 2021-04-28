@@ -92,7 +92,8 @@ FB_SafeCraneNumber6();
 FB_SafeCraneNumber7(); </html:xhtml>
           </ST>
         </body>
-        <addData><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+        <addData>
+          <data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
             <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber1">
               <interface>
                 <localVars>
@@ -379,7 +380,11 @@ TEST_FINISHED();</html:xhtml>
               </body>
               <addData />
             </Method>
-          </data></addData></pou>
+          </data></data><data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
+            <ObjectId>d2d6fe92-75e7-4589-85a3-5ae4f3a3df15</ObjectId>
+          </data>
+        </addData>
+      </pou>
     </pous>
   </types>
   <instances>
