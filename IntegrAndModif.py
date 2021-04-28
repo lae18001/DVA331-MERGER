@@ -1,6 +1,7 @@
 import csv
 from xml.etree import ElementTree as etree
-from xml.dom import minidom
+
+###-------FILE NAMES NEED TO BE CHANGED FOR EVERY FB--------###
 
 input_file = "example_thesis2.csv"      # file with generated input values from SEAFOX
 file_to_parse = "testing3.xml"          # exported PLCopenXML file from CODESYS with FB_Test_suite as an example test case
@@ -13,16 +14,16 @@ inputCases = []              # A list where all the generated test cases will be
 method_names = []            # A list where all method names are saved
 i=0
 
-###--------------This part needs to be changed manually for every new FB----------------###
-
 ### goes through every row in csv-file, extracts the input values and creates new test cases with them
 for row in csv_f:
-    
     i=i+1
-    m_name = "FB_SafeCraneNumber" + str(i)       # generates individual numbering for given method name
 
+    ###--------------The following parts need to be changed manually for every new FB----------------###
+
+    m_name = "FB_SafeCraneNumber" + str(i)       #----CHANGE THE METHOD NAME----#
+
+    ###-----COPY/PASTE IN THE STRING------from xml file. The whole <data> Element located at './types/pous/pou/addData/'.-----###
     ### String that will create a new Element in xml file.  Every Element matches a single test case in CODESYS program
-
     text_data = """<data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
             <Method name="New_Method_name" ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581">
               <interface>
@@ -98,11 +99,11 @@ for i in range(len(method_names)):
 fb_body = root.find('./types/pous/pou/body/ST/')
 names = '(); \n'.join(method_names)+'(); '
 fb_body.text = names   
-print(" "+str(len(method_names))+" new test cases were created:\n",fb_body.text)
+print(""+str(len(method_names))+" new test cases were created:\n",fb_body.text)
 
 ### Finds a place where new test cases will be added
 ### clears the existing list and adds in new list of cases
-place_for_case = elem.findall('./types/pous/pou/addData')
+place_for_case = elem.findall('./types/pous/pou/addData/')
 place_for_case[0].clear()
 place_for_case[0].extend(inputCases)
 
