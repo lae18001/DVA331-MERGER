@@ -1,0 +1,401 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<project xmlns:html="http://www.w3.org/1999/xhtml">
+  <fileHeader companyName="" creationDateTime="2021-04-28T11:44:03.8099099" productName="CODESYS" productVersion="CODESYS V3.5 SP16 Patch 4" />
+  <contentHeader modificationDateTime="2021-04-28T10:31:29.8104989" name="">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/projectinformation">
+        <ProjectInformation>
+          <property name="Author" type="string" />
+          <property name="Description" type="string" />
+          <property name="Project" type="string">2104011509codesys_example_findtruemarkers_RECOVERED_2021-04-28T09-31-36</property>
+          <property name="Title" type="string" />
+          <property name="Version string" type="string" />
+        </ProjectInformation>
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="ccsSafeCraneNumberSuperv_Test" pouType="functionBlock">
+        <interface>
+          <inputVars>
+            <variable name="in_CraneNoSet1">
+              <type>
+                <WORD />
+              </type>
+              <documentation>
+                <html:xhtml> First crane number </html:xhtml>
+              </documentation>
+            </variable>
+            <variable name="in_CraneNoSet2">
+              <type>
+                <WORD />
+              </type>
+              <documentation>
+                <html:xhtml> Second crane number </html:xhtml>
+              </documentation>
+            </variable>
+          </inputVars>
+          <outputVars>
+            <variable name="out_S_CraneNoSupervOk">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <html:xhtml>Crane numbers match and are not an empty word</html:xhtml>
+              </documentation>
+            </variable>
+            <variable name="out_S_CraneNo">
+              <type>
+                <WORD />
+              </type>
+              <documentation>
+                <html:xhtml> A safe crane number. If crane numbers missmatch, this word is set to an empty word </html:xhtml>
+              </documentation>
+            </variable>
+          </outputVars>
+          <localVars>
+            <variable name="EmptyWord">
+              <type>
+                <WORD />
+              </type>
+            </variable>
+          </localVars>
+          <addData>
+            <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/pouinheritance">
+              <Inheritance>
+                <Extends>CfUnit.FB_TestSuite</Extends>
+              </Inheritance>
+            </data>
+          </addData>
+        </interface>
+        <body>
+          <ST>
+            <html:xhtml>FB_SafeCraneNumber1(); 
+FB_SafeCraneNumber2(); 
+FB_SafeCraneNumber3(); 
+FB_SafeCraneNumber4(); 
+FB_SafeCraneNumber5(); 
+FB_SafeCraneNumber6(); 
+FB_SafeCraneNumber7(); </html:xhtml>
+          </ST>
+        </body>
+        <addData><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber1">
+              <interface>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="ccsSafeCraneNumberSuperv" />
+                    </type>
+                  </variable>
+                  <variable name="Result">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <html:xhtml>TEST('FB_SafeCraneNumber1');
+Fun(in_CraneNoSet1 := 3, in_CraneNoSet2 := 1, out_S_CraneNoSupervOk =&gt; Result);    
+AssertTrue(Condition := (Result = ExpectedResult),
+           Message := 'Result is True');
+                                                                                      
+TEST_FINISHED();</html:xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber2">
+              <interface>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="ccsSafeCraneNumberSuperv" />
+                    </type>
+                  </variable>
+                  <variable name="Result">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <html:xhtml>TEST('FB_SafeCraneNumber2');
+Fun(in_CraneNoSet1 := 3, in_CraneNoSet2 := 3, out_S_CraneNoSupervOk =&gt; Result);    
+AssertTrue(Condition := (Result = ExpectedResult),
+           Message := 'Result is True');
+                                                                                      
+TEST_FINISHED();</html:xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber3">
+              <interface>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="ccsSafeCraneNumberSuperv" />
+                    </type>
+                  </variable>
+                  <variable name="Result">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <html:xhtml>TEST('FB_SafeCraneNumber3');
+Fun(in_CraneNoSet1 := 3, in_CraneNoSet2 := 3, out_S_CraneNoSupervOk =&gt; Result);    
+AssertTrue(Condition := (Result = ExpectedResult),
+           Message := 'Result is True');
+                                                                                      
+TEST_FINISHED();</html:xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber4">
+              <interface>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="ccsSafeCraneNumberSuperv" />
+                    </type>
+                  </variable>
+                  <variable name="Result">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <html:xhtml>TEST('FB_SafeCraneNumber4');
+Fun(in_CraneNoSet1 := 2, in_CraneNoSet2 := 4, out_S_CraneNoSupervOk =&gt; Result);    
+AssertTrue(Condition := (Result = ExpectedResult),
+           Message := 'Result is True');
+                                                                                      
+TEST_FINISHED();</html:xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber5">
+              <interface>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="ccsSafeCraneNumberSuperv" />
+                    </type>
+                  </variable>
+                  <variable name="Result">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <html:xhtml>TEST('FB_SafeCraneNumber5');
+Fun(in_CraneNoSet1 := 6, in_CraneNoSet2 := 6, out_S_CraneNoSupervOk =&gt; Result);    
+AssertTrue(Condition := (Result = ExpectedResult),
+           Message := 'Result is True');
+                                                                                      
+TEST_FINISHED();</html:xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber6">
+              <interface>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="ccsSafeCraneNumberSuperv" />
+                    </type>
+                  </variable>
+                  <variable name="Result">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <html:xhtml>TEST('FB_SafeCraneNumber6');
+Fun(in_CraneNoSet1 := 4, in_CraneNoSet2 := 3, out_S_CraneNoSupervOk =&gt; Result);    
+AssertTrue(Condition := (Result = ExpectedResult),
+           Message := 'Result is True');
+                                                                                      
+TEST_FINISHED();</html:xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber7">
+              <interface>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="ccsSafeCraneNumberSuperv" />
+                    </type>
+                  </variable>
+                  <variable name="Result">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <html:xhtml>TEST('FB_SafeCraneNumber7');
+Fun(in_CraneNoSet1 := 1, in_CraneNoSet2 := 6, out_S_CraneNoSupervOk =&gt; Result);    
+AssertTrue(Condition := (Result = ExpectedResult),
+           Message := 'Result is True');
+                                                                                      
+TEST_FINISHED();</html:xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data></addData></pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/projectstructure">
+      <ProjectStructure>
+        <Folder Name="FB_Tests">
+          <Folder Name="CraneSafetyModuleLib_Tests">
+            <Object Name="ccsSafeCraneNumberSuperv_Test" ObjectId="d2d6fe92-75e7-4589-85a3-5ae4f3a3df15">
+              <Object Name="FB_CraneNumberSuperv_Test1" ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" />
+            </Object>
+          </Folder>
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

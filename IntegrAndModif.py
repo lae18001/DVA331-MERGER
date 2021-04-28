@@ -2,52 +2,30 @@ import csv
 from xml.etree import ElementTree as etree
 from xml.dom import minidom
 
-### opens the specified csv file and reads the file row by row
-f = open('example_thesis2.csv')
-csv_f = csv.reader(f)
+input_file = "example_thesis2.csv"      # file with generated input values from SEAFOX
+file_to_parse = "testing3.xml"          # exported PLCopenXML file from CODESYS with FB_Test_suite as an example test case
+new_file_name = "testing3_new.xml"      # File that will be imported back to CODESYS with new test cases 
 
-### A list where all the generated test cases will be saved
-inputCases = []
-### A list where all method names are saved
-method_names = []
+f = open(input_file)         # opens and loads the specified csv-file
+csv_f = csv.reader(f)        # Reads the csv-file row by row
+
+inputCases = []              # A list where all the generated test cases will be saved
+method_names = []            # A list where all method names are saved
 i=0
-###Expected Outcome is set to be zero for all the test cases
-expectedOut = '0'
+
 ###--------------This part needs to be changed manually for every new FB----------------###
 
-### goes through every row in csv file, extracts the input values and creates new test cases
+### goes through every row in csv-file, extracts the input values and creates new test cases with them
 for row in csv_f:
-    ### generates the name for every new test case with individual numbering that is equal to the row number
+    
     i=i+1
-    m_name = "FB_CraneNumberSuperv_Test" + str(i)
+    m_name = "FB_SafeCraneNumber" + str(i)       # generates individual numbering for given method name
+
+    ### String that will create a new Element in xml file.  Every Element matches a single test case in CODESYS program
 
     text_data = """<data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
-            <Method name='"""+m_name+"""' ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581">
+            <Method name="New_Method_name" ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581">
               <interface>
-                <inputVars>
-                  <variable name="craneNoSet1">
-                    <type>
-                      <WORD />
-                    </type>
-                    <initialValue>
-                      <simpleValue value='"""+row[0]+"""'/>
-                    </initialValue>
-                    <documentation>
-                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> First crane number </xhtml>
-                    </documentation>
-                  </variable>
-                  <variable name="craneNoSet2">
-                    <type>
-                      <WORD />
-                    </type>
-                    <initialValue>
-                      <simpleValue value='"""+row[1]+"""'/>
-                    </initialValue>
-                    <documentation>
-                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Second crane number </xhtml>
-                    </documentation>
-                  </variable>
-                </inputVars>
                 <localVars>
                   <variable name="Fun">
                     <type>
@@ -76,9 +54,8 @@ for row in csv_f:
               </interface>
               <body>
                 <ST>
-                  <xhtml xmlns="http://www.w3.org/1999/xhtml">TEST('"""+m_name+"""');      			      (* Naming the test case *)
-
-Fun(in_CraneNoSet1 := craneNoSet1, in_CraneNoSet2 := craneNoSet2, out_S_CraneNoSupervOk =&gt; Result);    (* Calling the FB to be tested *)
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">TEST('"""+m_name+"""');
+Fun(in_CraneNoSet1 := """+row[0]+""", in_CraneNoSet2 := """+row[1]+""", out_S_CraneNoSupervOk =&gt; Result);    
 AssertTrue(Condition := (Result = ExpectedResult),
            Message := 'Result is True');
                                                                                       
@@ -89,16 +66,17 @@ TEST_FINISHED();</xhtml>
             </Method>
           </data>"""
                   
-    method_names.append(m_name+'();')
-    inputCases.append(etree.fromstring(text_data)) #new test cases are added in the list parsed as tree Elements
+    method_names.append(m_name)                         # method names are saved in a list to later add in FB body
+    inputCases.append(etree.fromstring(text_data))      # new test cases are added in the list while parsed as tree Elements
    
 f.close()
 
 ###--------- Modification and Update of an XML file -----------###
 
-### Specify the file name where new test cases will be addded
-file_n = "just_t1.xml"
-elem = etree.parse(file_n) 
+### Parses the file where new test cases will be addded
+elem = etree.parse(file_to_parse) 
+root = elem.getroot()
+#print(root.tag)
 
 ### Removes namespaces from the parsed xml file
 def remove_namespace(doc, namespace):
@@ -108,24 +86,26 @@ def remove_namespace(doc, namespace):
         if elem.tag.startswith(ns):
             elem.tag = elem.tag[nsl:]
 
-remove_namespace(elem, u"http://www.plcopen.org/xml/tc6_0200")
+name_space = u"http://www.plcopen.org/xml/tc6_0200" 
+remove_namespace(elem, name_space)
 
-root = elem.getroot()
-#print(root.tag)
+### Sets new method names in each Element <data><Method 'name'= 'new_name'>
+for i in range(len(method_names)):
+    inputCases[i][0].set('name', method_names[i]) 
+    #print(inputCases[i][0].attrib)
 
-### Adds all newly created (test case) method names into FB body
+#### Adds all newly created (test cases) method names into FB body (as function calls in CODESYS)
 fb_body = root.find('./types/pous/pou/body/ST/')
-names = ' '.join(method_names)
+names = '(); \n'.join(method_names)+'(); '
 fb_body.text = names   
-print(fb_body.text)
+print(" "+str(len(method_names))+" new test cases were created:\n",fb_body.text)
 
 ### Finds a place where new test cases will be added
-### clears the existing space and adds in new cases
+### clears the existing list and adds in new list of cases
 place_for_case = elem.findall('./types/pous/pou/addData')
 place_for_case[0].clear()
 place_for_case[0].extend(inputCases)
 
-### Changes are written to a new XML file, name needs to be specifyed
-new_file_name = "just_t1_new1.xml"
+### Changes are written to a new XML file
 elem.write(new_file_name, encoding="us-ascii", xml_declaration = True)
-print('The new file was created!:', new_file_name)
+print('The new file was created successfully!:', new_file_name)
