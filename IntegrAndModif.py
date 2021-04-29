@@ -80,11 +80,6 @@ for row in csv_f:
 
 f.close()
 
-### Sets new method names in each Element <data><Method 'name'= 'new_name'>
-for i in range(len(method_names)):
-    inputCases[i][0].set('name', method_names[i]) 
-    #print(inputCases[i][0].attrib)
-
 #### Adds all newly created (test cases) method names into FB body (as function calls in CODESYS)
 fb_body = root.find('./types/pous/pou/body/ST/')
 names = '(); \n'.join(method_names)+'(); '
