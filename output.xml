@@ -1,0 +1,880 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns:html="http://www.w3.org/1999/xhtml">
+  <fileHeader companyName="" creationDateTime="2021-04-29T08:49:20.3586754" productName="CODESYS" productVersion="CODESYS V3.5 SP16 Patch 4" />
+  <contentHeader modificationDateTime="2021-04-29T00:03:20.8398477" name="">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/projectinformation">
+        <ProjectInformation>
+          <property name="Author" type="string" />
+          <property name="Description" type="string" />
+          <property name="Project" type="string">2104011509codesys_example_findtruemarkers</property>
+          <property name="Title" type="string" />
+          <property name="Version string" type="string" />
+        </ProjectInformation>
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="sf_equ_BaseTest_RandomTest_Res1" pouType="functionBlock">
+        <interface>
+          <addData>
+            <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/pouinheritance">
+              <Inheritance>
+                <Extends>FB_TestSuite</Extends>
+              </Inheritance>
+            </data>
+          </addData>
+        </interface>
+        <body>
+          <ST>
+            <html:xhtml>FB_SafeCraneNumber1(); 
+FB_SafeCraneNumber2(); 
+FB_SafeCraneNumber3(); 
+FB_SafeCraneNumber4(); 
+FB_SafeCraneNumber5(); 
+FB_SafeCraneNumber6(); 
+FB_SafeCraneNumber7(); 
+FB_SafeCraneNumber8(); </html:xhtml>
+          </ST>
+        </body>
+        <addData><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber1">
+              <interface>
+                <inputVars>
+                  <variable name="t_Active">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelA">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelB">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="0" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_DiscrepancyTime">
+                    <type>
+                      <TIME />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="T#16964ms" />
+                    </initialValue>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="sf_equ" />
+                    </type>
+                  </variable>
+                  <variable name="Result1">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result2">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result3">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult1">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult2">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult3">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber1');
+
+Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
+
+AssertTrue(Condition := (Result1 = ExpectedResult1),
+			Message := 'Result1 is True');
+			
+TEST_FINISHED();</html:xhtml></ST></body>
+              <addData />
+            </Method>
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber2">
+              <interface>
+                <inputVars>
+                  <variable name="t_Active">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="0" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelA">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="0" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelB">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="0" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_DiscrepancyTime">
+                    <type>
+                      <TIME />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="T#11444ms" />
+                    </initialValue>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="sf_equ" />
+                    </type>
+                  </variable>
+                  <variable name="Result1">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result2">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result3">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult1">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult2">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult3">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber2');
+
+Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
+
+AssertTrue(Condition := (Result1 = ExpectedResult1),
+			Message := 'Result1 is True');
+			
+TEST_FINISHED();</html:xhtml></ST></body>
+              <addData />
+            </Method>
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber3">
+              <interface>
+                <inputVars>
+                  <variable name="t_Active">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelA">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelB">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_DiscrepancyTime">
+                    <type>
+                      <TIME />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="T#4309ms" />
+                    </initialValue>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="sf_equ" />
+                    </type>
+                  </variable>
+                  <variable name="Result1">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result2">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result3">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult1">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult2">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult3">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber3');
+
+Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
+
+AssertTrue(Condition := (Result1 = ExpectedResult1),
+			Message := 'Result1 is True');
+			
+TEST_FINISHED();</html:xhtml></ST></body>
+              <addData />
+            </Method>
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber4">
+              <interface>
+                <inputVars>
+                  <variable name="t_Active">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelA">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelB">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_DiscrepancyTime">
+                    <type>
+                      <TIME />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="T#11767ms" />
+                    </initialValue>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="sf_equ" />
+                    </type>
+                  </variable>
+                  <variable name="Result1">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result2">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result3">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult1">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult2">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult3">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber4');
+
+Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
+
+AssertTrue(Condition := (Result1 = ExpectedResult1),
+			Message := 'Result1 is True');
+			
+TEST_FINISHED();</html:xhtml></ST></body>
+              <addData />
+            </Method>
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber5">
+              <interface>
+                <inputVars>
+                  <variable name="t_Active">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelA">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelB">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="0" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_DiscrepancyTime">
+                    <type>
+                      <TIME />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="T#24095ms" />
+                    </initialValue>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="sf_equ" />
+                    </type>
+                  </variable>
+                  <variable name="Result1">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result2">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result3">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult1">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult2">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult3">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber5');
+
+Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
+
+AssertTrue(Condition := (Result1 = ExpectedResult1),
+			Message := 'Result1 is True');
+			
+TEST_FINISHED();</html:xhtml></ST></body>
+              <addData />
+            </Method>
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber6">
+              <interface>
+                <inputVars>
+                  <variable name="t_Active">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="0" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelA">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelB">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_DiscrepancyTime">
+                    <type>
+                      <TIME />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="T#25863ms" />
+                    </initialValue>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="sf_equ" />
+                    </type>
+                  </variable>
+                  <variable name="Result1">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result2">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result3">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult1">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult2">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult3">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber6');
+
+Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
+
+AssertTrue(Condition := (Result1 = ExpectedResult1),
+			Message := 'Result1 is True');
+			
+TEST_FINISHED();</html:xhtml></ST></body>
+              <addData />
+            </Method>
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber7">
+              <interface>
+                <inputVars>
+                  <variable name="t_Active">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelA">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelB">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_DiscrepancyTime">
+                    <type>
+                      <TIME />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="T#8669ms" />
+                    </initialValue>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="sf_equ" />
+                    </type>
+                  </variable>
+                  <variable name="Result1">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result2">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result3">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult1">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult2">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult3">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber7');
+
+Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
+
+AssertTrue(Condition := (Result1 = ExpectedResult1),
+			Message := 'Result1 is True');
+			
+TEST_FINISHED();</html:xhtml></ST></body>
+              <addData />
+            </Method>
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber8">
+              <interface>
+                <inputVars>
+                  <variable name="t_Active">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelA">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="0" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_ChannelB">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="0" />
+                    </initialValue>
+                  </variable>
+                  <variable name="t_DiscrepancyTime">
+                    <type>
+                      <TIME />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="T#2334ms" />
+                    </initialValue>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="Fun">
+                    <type>
+                      <derived name="sf_equ" />
+                    </type>
+                  </variable>
+                  <variable name="Result1">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result2">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Result3">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="ExpectedResult1">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult2">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="ExpectedResult3">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                  <variable name="Condition">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber8');
+
+Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
+
+AssertTrue(Condition := (Result1 = ExpectedResult1),
+			Message := 'Result1 is True');
+			
+TEST_FINISHED();</html:xhtml></ST></body>
+              <addData />
+            </Method>
+          </data>
+          </addData></pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/projectstructure">
+      <ProjectStructure>
+        <Folder Name="Test">
+          <Folder Name="sf_equ_test">
+            <Object Name="sf_equ_BaseTest_RandomTest_Res1" ObjectId="f329a4b8-c384-4cdf-8cd6-d5ec2507ba4f">
+              <Object Name="TC1" ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" />
+            </Object>
+          </Folder>
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
