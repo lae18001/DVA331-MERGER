@@ -41,7 +41,6 @@ for row in csv_f:
 	for element in root.findall('types/pous/pou/addData/data/Method/interface/inputVars/variable'):
 		isTIME = False
 		for child in element:
-			#print(child.tag)
 			if child.tag == "type":
 				if child[0].tag == "TIME":
 					isTIME = True
@@ -56,9 +55,7 @@ for row in csv_f:
 
 	# update test case name in method
 	for element in root.findall('types/pous/pou/addData/data/Method'):
-		#print(element.get('name'))
 		element.set('name', m_name+str(k))
-		#print(element.get('name'))
 		
 	# update test case body text
 	p = root.findall('types/pous/pou/addData/data/Method/body/ST')
