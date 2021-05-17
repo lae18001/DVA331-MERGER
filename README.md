@@ -1,4 +1,4 @@
-# DVA331-Script_SEAFOX_CODESYS
+# DVA331-MERGER
 The implementation of the script is a process of the  new test case creation while reading the  rows  from  a  csv-file.
 Input  values  for  those test cases are set during the iteration process over each created data element’s variable tags. 
 The  script uses  a  well  established  python  library  called xml.etree.ElementTree that is made especially for parsing, creating and modifying xml files.  For the merging process to begin, the user first needs to specify the names of the input files for the script (See the picture below). 
