@@ -123,18 +123,17 @@ FB_SafeCraneNumber7(); </html:xhtml>
                 </localVars>
               </interface>
               <body>
-                <ST>
-                  <html:xhtml>TEST('FB_SafeCraneNumber1');
-Fun(in_CraneNoSet1 := 3, in_CraneNoSet2 := 1, out_S_CraneNoSupervOk =&gt; Result);    
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber1');      			      
+
+Fun(in_CraneNoSet1 := """+row[0]+""", in_CraneNoSet2 := """+row[0]+""", out_S_CraneNoSupervOk =&gt; Result);    
 AssertTrue(Condition := (Result = ExpectedResult),
            Message := 'Result is True');
                                                                                       
-TEST_FINISHED();</html:xhtml>
-                </ST>
-              </body>
+TEST_FINISHED();</html:xhtml></ST></body>
               <addData />
             </Method>
-          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
             <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber2">
               <interface>
                 <localVars>
@@ -164,18 +163,17 @@ TEST_FINISHED();</html:xhtml>
                 </localVars>
               </interface>
               <body>
-                <ST>
-                  <html:xhtml>TEST('FB_SafeCraneNumber2');
-Fun(in_CraneNoSet1 := 3, in_CraneNoSet2 := 3, out_S_CraneNoSupervOk =&gt; Result);    
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber2');      			      
+
+Fun(in_CraneNoSet1 := """+row[0]+""", in_CraneNoSet2 := """+row[0]+""", out_S_CraneNoSupervOk =&gt; Result);    
 AssertTrue(Condition := (Result = ExpectedResult),
            Message := 'Result is True');
                                                                                       
-TEST_FINISHED();</html:xhtml>
-                </ST>
-              </body>
+TEST_FINISHED();</html:xhtml></ST></body>
               <addData />
             </Method>
-          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
             <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber3">
               <interface>
                 <localVars>
@@ -205,18 +203,17 @@ TEST_FINISHED();</html:xhtml>
                 </localVars>
               </interface>
               <body>
-                <ST>
-                  <html:xhtml>TEST('FB_SafeCraneNumber3');
-Fun(in_CraneNoSet1 := 3, in_CraneNoSet2 := 3, out_S_CraneNoSupervOk =&gt; Result);    
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber3');      			      
+
+Fun(in_CraneNoSet1 := """+row[0]+""", in_CraneNoSet2 := """+row[0]+""", out_S_CraneNoSupervOk =&gt; Result);    
 AssertTrue(Condition := (Result = ExpectedResult),
            Message := 'Result is True');
                                                                                       
-TEST_FINISHED();</html:xhtml>
-                </ST>
-              </body>
+TEST_FINISHED();</html:xhtml></ST></body>
               <addData />
             </Method>
-          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
             <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber4">
               <interface>
                 <localVars>
@@ -246,18 +243,17 @@ TEST_FINISHED();</html:xhtml>
                 </localVars>
               </interface>
               <body>
-                <ST>
-                  <html:xhtml>TEST('FB_SafeCraneNumber4');
-Fun(in_CraneNoSet1 := 2, in_CraneNoSet2 := 4, out_S_CraneNoSupervOk =&gt; Result);    
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber4');      			      
+
+Fun(in_CraneNoSet1 := """+row[0]+""", in_CraneNoSet2 := """+row[0]+""", out_S_CraneNoSupervOk =&gt; Result);    
 AssertTrue(Condition := (Result = ExpectedResult),
            Message := 'Result is True');
                                                                                       
-TEST_FINISHED();</html:xhtml>
-                </ST>
-              </body>
+TEST_FINISHED();</html:xhtml></ST></body>
               <addData />
             </Method>
-          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
             <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber5">
               <interface>
                 <localVars>
@@ -287,18 +283,17 @@ TEST_FINISHED();</html:xhtml>
                 </localVars>
               </interface>
               <body>
-                <ST>
-                  <html:xhtml>TEST('FB_SafeCraneNumber5');
-Fun(in_CraneNoSet1 := 6, in_CraneNoSet2 := 6, out_S_CraneNoSupervOk =&gt; Result);    
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber5');      			      
+
+Fun(in_CraneNoSet1 := """+row[0]+""", in_CraneNoSet2 := """+row[0]+""", out_S_CraneNoSupervOk =&gt; Result);    
 AssertTrue(Condition := (Result = ExpectedResult),
            Message := 'Result is True');
                                                                                       
-TEST_FINISHED();</html:xhtml>
-                </ST>
-              </body>
+TEST_FINISHED();</html:xhtml></ST></body>
               <addData />
             </Method>
-          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
             <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber6">
               <interface>
                 <localVars>
@@ -328,18 +323,17 @@ TEST_FINISHED();</html:xhtml>
                 </localVars>
               </interface>
               <body>
-                <ST>
-                  <html:xhtml>TEST('FB_SafeCraneNumber6');
-Fun(in_CraneNoSet1 := 4, in_CraneNoSet2 := 3, out_S_CraneNoSupervOk =&gt; Result);    
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber6');      			      
+
+Fun(in_CraneNoSet1 := """+row[0]+""", in_CraneNoSet2 := """+row[0]+""", out_S_CraneNoSupervOk =&gt; Result);    
 AssertTrue(Condition := (Result = ExpectedResult),
            Message := 'Result is True');
                                                                                       
-TEST_FINISHED();</html:xhtml>
-                </ST>
-              </body>
+TEST_FINISHED();</html:xhtml></ST></body>
               <addData />
             </Method>
-          </data><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
+          </data>
+          <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
             <Method ObjectId="cc6b36d7-5497-4911-81b5-9c5d048b7581" name="FB_SafeCraneNumber7">
               <interface>
                 <localVars>
@@ -369,18 +363,17 @@ TEST_FINISHED();</html:xhtml>
                 </localVars>
               </interface>
               <body>
-                <ST>
-                  <html:xhtml>TEST('FB_SafeCraneNumber7');
-Fun(in_CraneNoSet1 := 1, in_CraneNoSet2 := 6, out_S_CraneNoSupervOk =&gt; Result);    
+                <ST><html:xhtml>TEST('FB_SafeCraneNumber7');      			      
+
+Fun(in_CraneNoSet1 := """+row[0]+""", in_CraneNoSet2 := """+row[0]+""", out_S_CraneNoSupervOk =&gt; Result);    
 AssertTrue(Condition := (Result = ExpectedResult),
            Message := 'Result is True');
                                                                                       
-TEST_FINISHED();</html:xhtml>
-                </ST>
-              </body>
+TEST_FINISHED();</html:xhtml></ST></body>
               <addData />
             </Method>
-          </data></data><data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
+          </data>
+          </data><data handleUnknown="discard" name="http://www.3s-software.com/plcopenxml/objectid">
             <ObjectId>d2d6fe92-75e7-4589-85a3-5ae4f3a3df15</ObjectId>
           </data>
         </addData>
