@@ -40,18 +40,18 @@
         </interface>
         <body>
           <ST>
-            <html:xhtml>FB_SafeCraneNumber1(); 
-FB_SafeCraneNumber2(); 
-FB_SafeCraneNumber3(); 
-FB_SafeCraneNumber4(); 
-FB_SafeCraneNumber5(); 
-FB_SafeCraneNumber6(); 
-FB_SafeCraneNumber7(); 
-FB_SafeCraneNumber8(); </html:xhtml>
+            <html:xhtml>TC1(); 
+TC2(); 
+TC3(); 
+TC4(); 
+TC5(); 
+TC6(); 
+TC7(); 
+TC8(); </html:xhtml>
           </ST>
         </body>
         <addData><data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
-            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber1">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="TC1">
               <interface>
                 <inputVars>
                   <variable name="t_Active">
@@ -140,7 +140,7 @@ FB_SafeCraneNumber8(); </html:xhtml>
                 </localVars>
               </interface>
               <body>
-                <ST><html:xhtml>TEST('FB_SafeCraneNumber1');
+                <ST><html:xhtml>TEST('TC1');
 
 Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
 
@@ -152,7 +152,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
             </Method>
           </data>
           <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
-            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber2">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="TC2">
               <interface>
                 <inputVars>
                   <variable name="t_Active">
@@ -241,7 +241,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
                 </localVars>
               </interface>
               <body>
-                <ST><html:xhtml>TEST('FB_SafeCraneNumber2');
+                <ST><html:xhtml>TEST('TC2');
 
 Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
 
@@ -253,7 +253,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
             </Method>
           </data>
           <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
-            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber3">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="TC3">
               <interface>
                 <inputVars>
                   <variable name="t_Active">
@@ -342,7 +342,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
                 </localVars>
               </interface>
               <body>
-                <ST><html:xhtml>TEST('FB_SafeCraneNumber3');
+                <ST><html:xhtml>TEST('TC3');
 
 Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
 
@@ -354,7 +354,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
             </Method>
           </data>
           <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
-            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber4">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="TC4">
               <interface>
                 <inputVars>
                   <variable name="t_Active">
@@ -443,7 +443,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
                 </localVars>
               </interface>
               <body>
-                <ST><html:xhtml>TEST('FB_SafeCraneNumber4');
+                <ST><html:xhtml>TEST('TC4');
 
 Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
 
@@ -455,7 +455,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
             </Method>
           </data>
           <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
-            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber5">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="TC5">
               <interface>
                 <inputVars>
                   <variable name="t_Active">
@@ -544,7 +544,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
                 </localVars>
               </interface>
               <body>
-                <ST><html:xhtml>TEST('FB_SafeCraneNumber5');
+                <ST><html:xhtml>TEST('TC5');
 
 Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
 
@@ -556,7 +556,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
             </Method>
           </data>
           <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
-            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber6">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="TC6">
               <interface>
                 <inputVars>
                   <variable name="t_Active">
@@ -645,7 +645,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
                 </localVars>
               </interface>
               <body>
-                <ST><html:xhtml>TEST('FB_SafeCraneNumber6');
+                <ST><html:xhtml>TEST('TC6');
 
 Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
 
@@ -657,7 +657,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
             </Method>
           </data>
           <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
-            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber7">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="TC7">
               <interface>
                 <inputVars>
                   <variable name="t_Active">
@@ -746,7 +746,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
                 </localVars>
               </interface>
               <body>
-                <ST><html:xhtml>TEST('FB_SafeCraneNumber7');
+                <ST><html:xhtml>TEST('TC7');
 
 Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
 
@@ -758,7 +758,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
             </Method>
           </data>
           <data handleUnknown="implementation" name="http://www.3s-software.com/plcopenxml/method">
-            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="FB_SafeCraneNumber8">
+            <Method ObjectId="69c4b1fb-2e38-420d-81f2-d1373ff24596" name="TC8">
               <interface>
                 <inputVars>
                   <variable name="t_Active">
@@ -847,7 +847,7 @@ TEST_FINISHED();</html:xhtml></ST></body>
                 </localVars>
               </interface>
               <body>
-                <ST><html:xhtml>TEST('FB_SafeCraneNumber8');
+                <ST><html:xhtml>TEST('TC8');
 
 Fun(Active := t_Active, ChannelA := t_ChannelA, ChannelB := t_ChannelB, DiscrepancyTime := t_DiscrepancyTime, Ready =&gt; Result1, EquivalentOut =&gt; Result2, Error =&gt; Result3);
 
