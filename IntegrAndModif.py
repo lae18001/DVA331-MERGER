@@ -4,10 +4,10 @@ import copy
 
 ###-------FILE NAMES NEED TO BE CHANGED FOR EVERY FB--------###
 
-input_file = "sf_equ_testcases.csv"			# file with generated input values from SEAFOX
-file_to_parse = "sf_equ_randomTest.xml"     # exported PLCopenXML file from CODESYS with FB_Test_suite as an example test case
-new_file_name = "output.xml"				# File that will be imported back to CODESYS with new test cases 
-m_name = "FB_SafeCraneNumber"				#----CHANGE THE METHOD NAME----#
+input_file = "testcaseInputs.csv"		# file with generated input values from SEAFOX
+file_to_parse = "testFB.xml"			# exported PLCopenXML file from CODESYS with FB_Test_suite as an example test case
+new_file_name = "testcases.xml"			# File that will be imported back to CODESYS with new test cases 
+m_name = "TC"							#----CHANGE THE METHOD NAME----#
 
 f = open(input_file)         # opens and loads the specified csv-file
 csv_f = csv.reader(f)        # Reads the csv-file row by row
@@ -84,7 +84,7 @@ f.close()
 fb_body = root.find('./types/pous/pou/body/ST/')
 names = '(); \n'.join(method_names)+'(); '
 fb_body.text = names   
-print(""+str(len(method_names))+" new test cases were created:\n",fb_body.text)
+print(""+str(len(method_names))+" new test cases were created\n")
 
 ### Finds a place where new test cases will be added
 ### clears the existing list and adds in new list of cases
