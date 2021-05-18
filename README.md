@@ -9,7 +9,8 @@ The  script uses library  called xml.etree.ElementTree that is made especially f
 ## Script Execution
 For the merging process to begin, the user first needs to specify the names of the files used in script (See the picture below). 
 
-![TheScript](https://user-images.githubusercontent.com/48024044/117944797-ebfb6500-b30d-11eb-9460-30f03de20f65.JPG)
+![TheScript](https://user-images.githubusercontent.com/48024044/118607496-f0fe5f80-b7b8-11eb-9dbd-7e133757bce3.JPG)
+
 
 
 - The csv-file, holding all the input values 
