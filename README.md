@@ -2,7 +2,7 @@
 The implementation of the script is a process of the  new test case creation while reading the  rows  from  a  csv-file.
 Input  values  for  those test cases are set during the iteration process over each created data element’s variable tags. 
 The  script uses  a  well  established  python  library  called xml.etree.ElementTree that is made especially for parsing, creating and modifying xml files.  For the merging process to begin, the user first needs to specify the names of the input files for the script (See the picture below). 
-[TheScript](https://user-images.githubusercontent.com/48024044/117944797-ebfb6500-b30d-11eb-9460-30f03de20f65.JPG)
+![TheScript](https://user-images.githubusercontent.com/48024044/117944797-ebfb6500-b30d-11eb-9460-30f03de20f65.JPG)
 
 The csv-file, holding all the input values and the PLCopen XML file that will be parsed and used as a template for the new test case creation.  
 The name of the output PLCopen XML file, that will be created holding all the newly generated test cases also requires user specified name.
