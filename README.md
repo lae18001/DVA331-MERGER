@@ -1,3 +1,4 @@
+
 # DVA331-MERGER
 ## Description
 The main task of the script is to merge together two files with the relevant parts taken from both of them and create the new file, 
@@ -13,7 +14,7 @@ For the merging process to begin, the user first needs to specify the names of t
 - The PLCopen XML file that will be parsed and used as a template for the new test case creation.  
 - The output PLCopen XML file, that will be created holding all the newly generated test cases.
 
-![TheScript](https://user-images.githubusercontent.com/48024044/118607496-f0fe5f80-b7b8-11eb-9dbd-7e133757bce3.JPG)
+![TheScript](https://user-images.githubusercontent.com/48024044/119253468-af532780-bbb1-11eb-9fec-643a0a0e7a11.JPG)
 
 
 
