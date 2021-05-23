@@ -1,8 +1,7 @@
 
 # DVA331-TEST CONCRETIZER
 ## Description
-The main task of the script is to merge together two files with the relevant parts taken from both of them and create the new file, 
-hence the name of the script - Merger.
+The main task of the script is to merge together two files with the relevant parts taken from both of them and create the new file.
 The implementation of the script is a process of the  new test case creation while reading the rows from a csv-file.
 Input  values  for  those test cases are set during the iteration process over each created data element’s variable tags. 
 The  script uses library  called xml.etree.ElementTree that is made especially for parsing, creating and modifying xml files. 
