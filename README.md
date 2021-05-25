@@ -7,7 +7,7 @@ Input  values  for  those test cases are set during the iteration process over e
 The  script uses library  called xml.etree.ElementTree that is made especially for parsing, creating and modifying xml files. 
 
 ## Script Execution
-For the merging process to begin, the user first needs to specify the names of the files used in script (See the picture below). 
+For the merging process to begin, the user first needs to specify the names of the files used in script (See the picture). 
 
 - The csv-file, holding all the input values 
 - The PLCopen XML file that will be parsed and used as a template for the new test case creation.  
